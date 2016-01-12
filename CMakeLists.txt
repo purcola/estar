@@ -110,7 +110,10 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(src)
+include_directories(
+    src
+    ${catkin_INCLUDE_DIRS}
+)
 
 ## Declare a C++ library
 add_library(estar
@@ -135,6 +138,15 @@ add_library(estar
   src/${PROJECT_NAME}/numeric.cpp
   #  src/${PROJECT_NAME}/graphics.cpp
   src/${PROJECT_NAME}/util.cpp
+)
+
+add_library (estar_planner
+    src/estar_planner.cpp
+)
+
+target_link_libraries(estar_planner
+    ${catkin_LIBRARIES}
+    estar
 )
 
 ## Add cmake target dependencies of the library
