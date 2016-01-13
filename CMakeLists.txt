@@ -140,7 +140,7 @@ add_library(estar
   src/${PROJECT_NAME}/util.cpp
 )
 
-add_library (estar_planner
+add_library(estar_planner
     src/estar_planner.cpp
 )
 
